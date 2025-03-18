@@ -10,7 +10,7 @@ const PrivacyPolicy = (_: { dom?: import("expo/dom").DOMProps }) => {
   return (
     <ScrollView style={{ backgroundColor: "#000000" }}>
       <Head>
-        <title>Privacy | Expo AI</title>
+        <title>Privacy | Expo Mastra</title>
       </Head>
       <Stack.Screen
         options={{

@@ -89,8 +89,10 @@ function HourlyForecastItem({ hour, index }: { hour?: Hour; index: number }) {
         {index === 0
           ? "Now"
           : hour
-          ? new Date(hour.time).toLocaleTimeString("en-US", { hour: "numeric" })
-          : "--"}
+            ? new Date(hour.time).toLocaleTimeString("en-US", {
+                hour: "numeric",
+              })
+            : "--"}
       </Text>
       {hour && (
         <Image

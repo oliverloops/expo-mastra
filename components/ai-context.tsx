@@ -6,7 +6,7 @@ import "server-only";
 import { z } from "zod";
 
 import { openai } from "@ai-sdk/openai";
-import { WeatherCard } from "./weather";
+import { WeatherCard, WeatherCardTwo } from "./weather";
 
 // Skeleton and display components
 import { unstable_headers } from "expo-router/rsc/headers";
@@ -69,7 +69,7 @@ export async function onSubmit(message: string) {
   }
 
   const result = await streamUI({
-    model: openai("gpt-4o-mini-2024-07-18"),
+    model: openai("gpt-4o-mini"),
     messages: [
       {
         role: "system",
@@ -173,7 +173,7 @@ User info:
           })
           .required(),
         async *generate({ city }) {
-          yield <WeatherCard city={city} />;
+          yield <WeatherCardTwo />;
           // await new Promise((resolve) => setTimeout(resolve, 5000));
 
           const weatherInfo = await getWeatherAsync(city);

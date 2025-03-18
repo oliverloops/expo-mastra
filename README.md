@@ -1,20 +1,7 @@
-# Expo AI
+# Expo Mastra
 
-
-https://github.com/user-attachments/assets/3bb52f8e-1b3d-48cf-88dc-d38feba9a98e
-
-
-This is the Expo Router AI demo from my [React Conf talk](https://www.youtube.com/watch?v=djhEgxQf3Kw). This project uses universal React Server Components in Expo Router to render native UI on the server and stream it down as part of an AI chat response.
-
-## Features
-
-- [Expo Router](https://docs.expo.dev/router/introduction/) — The universal React framework.
-  - Universal routing and rendering for native and web platforms.
-  - Full deep linking support everywhere.
-  - React Server Functions and streamed responses from the edge.
-  - Native navigation, gestures, and animations.
-- [AI SDK](https://sdk.vercel.ai/docs) — Uses experimental RSC support in the `ai` package for tool calls to OpenAI.
-
+A template that unifies both [Expo AI](https://github.com/EvanBacon/expo-ai) project and [Mastra](https://github.com/mastra-ai/mastra) the Typescript AI agent framework. This project uses universal React Server Components in Expo Router to render native UI on the server and stream it down as part of an AI chat powered
+by agentic workflows.
 
 ## APIs
 
@@ -87,9 +74,3 @@ This will require the following:
 Then run `eas build --platform ios -s` to build the app and deploy a versioned a server.
 
 ## Known Issues
-
-- `react-server-dom-webpack` must be patched for native to work because Hermes doesn't support promises correctly.
-- The deterministic module IDs are not the same across machines, meaning a publish from your local computer will not match a client build from EAS Build.
-- The `origin` field is a bit pesky to keep track of. This is a WIP.
-- The `ai` package needs to be patched manually in the package.json to support the SSR-pass. Add `"require"` field and set it to the client file (`import` field) in the `./rsc` specifier.
-- A number of fixes may be landed on main and not in the latest release. You may need to build Expo CLI from source.

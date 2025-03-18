@@ -20,7 +20,7 @@ export default function Layout() {
     <ThemeProvider>
       <Stack
         screenOptions={{
-          title: "Expo AI",
+          title: "Expo Mastra",
         }}
       >
         <Stack.Screen
